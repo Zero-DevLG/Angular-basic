@@ -1,0 +1,11 @@
+<div class="col">
+    <h3>Personajes</h3>
+    <hr>
+    <ul *ngIf="personajes.length > 0 else lp">
+        <li *ngFor="let p of personajes">{{ p.nombre}} - {{p.poder | number}}</li>
+    </ul>
+    <ng-template #lp>
+        <h3>No hay personajes en la lista</h3>
+    </ng-template>
+    
+</div>
