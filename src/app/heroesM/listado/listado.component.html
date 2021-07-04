@@ -1,0 +1,22 @@
+<p>Listado de Heroes</p>
+
+<ul *ngIf="heroes.length > 0 else hEmpty">
+    <li  *ngFor="let hero of heroes"> {{hero}}</li>
+</ul>
+<input type="text" class="form-control" #hero>
+<button (click)="addHero(hero.value)">Agregar Heroe</button>
+<button (click)="deleteHero(hero.value)">Eliminar Heroe</button>
+
+<div *ngIf="deleteHeroes.length > 0 else dEmpty">
+<ul>
+    <li style="color:red" *ngFor="let dhero of deleteHeroes">{{dhero}}</li>
+</ul>
+</div>
+
+<ng-template #dEmpty>
+    <h3>Ningun Heroe eliminado...</h3>
+</ng-template>
+
+<ng-template #hEmpty>
+    <h3>Ningun Heroe en la lista...</h3>
+</ng-template>
